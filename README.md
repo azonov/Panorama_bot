@@ -23,8 +23,8 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/azonov/Panorama_bot.git
+   cd Panorama_bot
    ```
 
 2. Скопируйте пример `.env` файла и настройте переменные окружения:
