@@ -58,7 +58,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         if "data" in response_data and "url" in response_data["data"]:
             share_url = response_data["data"]["url"]
             complete_url = f"https://panorama.yonote.ru/share/5f1fb236-1cd8-4df0-9f55-3ed6b391619b{share_url}"
-            await update.message.reply_text(f"Ваше обращение успешно отправлено! Вот ссылка на ваше обращение: {complete_url}")
+            await update.message.reply_text(f'<a href="{complete_url}">Ваше обращение</a>', parse_mode='HTML')
         else:
             await update.message.reply_text("Ваше обращение успешно отправлено, но мы не смогли получить ссылку на него.")
         print("Успешно отправлено:", response_data)
