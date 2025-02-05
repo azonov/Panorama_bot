@@ -2,6 +2,7 @@ import logging
 import os
 import json
 import requests
+import pytz
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
@@ -38,7 +39,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     headers = {
         'Content-type': 'application/json'
     }
-    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    timezone = pytz.timezone('Europe/Moscow')
+    current_time = datetime.now(timezone).strftime('%Y-%m-%d %H:%M:%S')
     title = f"Обращение от {user_name} | {current_time}"
     data = {
         "title": title,
